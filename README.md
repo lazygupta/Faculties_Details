@@ -15,4 +15,6 @@ Adding Faculty Details: Open the app and navigate to the "Add Faculty" section. 
 Displaying Details: After adding faculty details, return to the main screen and click the "Display Details" button to view the entered information.
 
 ##**Screenshots**
+
+
 ![Screenshot of my App](https://i.ibb.co/ysDTyq1/Screenshot-2024-03-18-155217.png)
