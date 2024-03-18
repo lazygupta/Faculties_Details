@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "680792991807",
+    "project_id": "timetable-c7ce9",
+    "storage_bucket": "timetable-c7ce9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680792991807:android:115db341fbf2d42c7e308a",
+        "android_client_info": {
+          "package_name": "com.example.faculties"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxRTK7qU0h2QGwrS9dXO3Xvak7-X3cvlI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
