@@ -67,4 +67,19 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
         return arrModel;
     }
+
+    public void deleteFaculty(int facultyId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_FACULTIES, KEY_ID + " = ?", new String[]{String.valueOf(facultyId)});
+        db.close();
+    }
+
+
+    public void deleteAllFaculties() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_FACULTIES, null, null); // Delete all rows from the faculties table
+        db.close();
+    }
+
+
 }

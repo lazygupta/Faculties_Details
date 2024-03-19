@@ -1,5 +1,6 @@
 package com.example.faculties;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         editTextDepartment = findViewById(R.id.editTextDepartment);
         Button buttonAddFaculty = findViewById(R.id.buttonAddFaculty);
         Button buttonFetchData = findViewById(R.id.buttonFetchData);
+        Button buttonDeleteData = findViewById(R.id.buttonDeleteData);
         textViewDisplayData = findViewById(R.id.textViewDisplayData);
 
         // Initialize Database Helper
@@ -83,6 +87,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonDeleteData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DeleteFaculties();
+            }
+        });
+
 
 
         for(int i=0; i<arrModel.size(); i++){
@@ -91,6 +102,26 @@ public class MainActivity extends AppCompatActivity {
                     + ", Department:"+arrModel.get(i).department);
         }
     }
+
+    private void DeleteFaculties() {
+        ArrayList<FacultiesModel> facultiesList = dbHelper.getFaculties();
+
+        CharSequence[] facultyNames = new CharSequence[facultiesList.size()];
+        for (int i = 0; i < facultiesList.size(); i++) {
+            facultyNames[i] = facultiesList.get(i).name;
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select Faculty to Delete");
+        builder.setItems(facultyNames, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dbHelper.deleteFaculty(facultiesList.get(which).id);
+            }
+        });
+        builder.show();
+    }
+
 
     private void showAllFaculties() {
         ArrayList<FacultiesModel> arrModel = dbHelper.getFaculties();
@@ -116,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             textViewDisplayData.setTextSize(16);
             textViewDisplayData.setLineSpacing(0, 1.5f);
             textViewDisplayData.setPadding(16, 16, 16, 16);
-            textViewDisplayData.setBackgroundResource(R.drawable.ic_launcher_background); // Set a custom background drawable
+            textViewDisplayData.setBackgroundResource(R.drawable.bg_textview); // Set a custom background drawable
         } else {
             // Display message if no faculties found
             textViewDisplayData.setText("No faculties found");
