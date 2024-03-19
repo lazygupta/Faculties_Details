@@ -1,101 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:padding="16dp"
-tools:context=".MainActivity">
-
-<!-- Toolbar -->
-<androidx.appcompat.widget.Toolbar
-    android:id="@+id/toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:layout_alignParentTop="true"
-    android:background="?attr/colorPrimary"
-    android:elevation="4dp"
-    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-    android:title="Faculty Management" />
-
-<!-- EditTexts and Buttons -->
-<!-- Your EditTexts and Buttons go here as before -->
-
-<EditText
-    android:id="@+id/editTextName"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="48dp"
-    android:hint="Name"
-    android:inputType="textPersonName" />
-
-<EditText
-    android:id="@+id/editTextContactDetails"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/editTextName"
-    android:layout_marginBottom="48dp"
-    android:hint="Contact Details"
-    android:inputType="text" />
-
-<EditText
-    android:id="@+id/editTextDepartment"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/editTextContactDetails"
-    android:layout_marginBottom="48dp"
-    android:hint="Department"
-    android:inputType="text" />
-
-<Button
-    android:id="@+id/buttonAddFaculty"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/editTextDepartment"
-    android:text="Add Faculty" />
-
-<Button
-    android:id="@+id/buttonFetchData"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/buttonAddFaculty"
-    android:text="Show all Faculties"
-    />
-
-
-<Button
-    android:id="@+id/buttonDeleteData"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/buttonFetchData"
-    android:text="Delete Faculties" />
-
-<ScrollView
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_below="@id/toolbar"
-    android:layout_marginTop="16dp">
+    android:padding="40dp"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textViewDisplayData"
+    <EditText
+        android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="" />
+        android:layout_marginBottom="48dp"
+        android:hint="Name"
+        android:inputType="textPersonName" />
 
-
-</ScrollView>
-
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_below="@id/buttonDeleteData"
-    android:layout_marginTop="30dp">
-
-    <TextView
-        android:id="@+id/textViewDisplayData"
+    <EditText
+        android:id="@+id/editTextContactDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="" />
+        android:layout_below="@id/editTextName"
+        android:layout_marginBottom="48dp"
+        android:hint="Contact Details"
+        android:inputType="text" />
 
-</ScrollView>
+    <EditText
+        android:id="@+id/editTextDepartment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextContactDetails"
+        android:layout_marginBottom="48dp"
+        android:hint="Department"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/buttonAddFaculty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextDepartment"
+        android:text="Add Faculty" />
+
+    <Button
+        android:id="@+id/buttonFetchData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonAddFaculty"
+        android:text="Show all Faculties"
+        />
+
+
+    <Button
+        android:id="@+id/buttonDeleteData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonFetchData"
+        android:text="Delete Faculties" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/buttonDeleteData"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/textViewDisplayData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+    </ScrollView>
+
 
 </RelativeLayout>
